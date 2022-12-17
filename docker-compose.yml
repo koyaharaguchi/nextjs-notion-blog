@@ -1,0 +1,13 @@
+version: '3'
+volumes:
+  node_modules:
+services:
+  node:
+    image: node:19-alpine
+    tty: true
+    volumes:
+      - ./:/app
+      - node_modules:/app/node_modules
+    working_dir: /app
+    ports:
+      - 3000:3000
