@@ -32,7 +32,7 @@ import styles from './styles.module.css'
 // -----------------------------------------------------------------------------
 
 const Code = dynamic(() =>
-  import('./customize-react-notion-x/Code').then(async (m) => {
+  import('./react-notion-x-wrapper/Code').then(async (m) => {
     // add / remove any prism syntaxes here
     await Promise.all([
       import('prismjs/components/prism-markup-templating.js'),
