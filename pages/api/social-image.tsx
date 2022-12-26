@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { name } from '@/lib/config'
 import { NextRequest } from 'next/server'
 
 import { ImageResponse } from '@vercel/og'
@@ -97,12 +98,9 @@ export default async function OGImage(req: NextRequest) {
             >
               {pageInfo.title}
             </div>
-
-            {pageInfo.detail && (
-              <div style={{ fontSize: 32, opacity: 0.6 }}>
-                {pageInfo.detail}
-              </div>
-            )}
+            <div style={{ fontSize: 32, opacity: 0.6 }}>
+              {name}
+            </div>
           </div>
         </div>
       </div>

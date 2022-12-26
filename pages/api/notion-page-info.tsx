@@ -14,6 +14,7 @@ import * as libConfig from '@/lib/config'
 import { mapImageUrl } from '@/lib/map-image-url'
 import { notion } from '@/lib/notion-api'
 import { NotionPageInfo } from '@/lib/types'
+import { getSocialImageUrl } from '@/lib/get-social-image-url'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== 'POST') {
@@ -59,7 +60,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   const imageBlockUrl = mapImageUrl(
     getPageProperty<string>('Social Image', block, recordMap) ||
-      (block as PageBlock).format?.page_cover,
+    (block as PageBlock).format?.page_cover,
     block
   )
   const imageFallbackUrl = mapImageUrl(libConfig.defaultPageCover, block)
@@ -97,8 +98,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const date =
     isBlogPost && datePublished
       ? `${datePublished.toLocaleString('en-US', {
-          month: 'long'
-        })} ${datePublished.getFullYear()}`
+        month: 'long'
+      })} ${datePublished.getFullYear()}`
       : undefined
   const detail = date || author || libConfig.domain
 

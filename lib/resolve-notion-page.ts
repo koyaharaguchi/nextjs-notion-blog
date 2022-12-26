@@ -7,6 +7,8 @@ import { db } from './db'
 import { getSiteMap } from './get-site-map'
 import { getPage } from './notion'
 
+import  custmizedRecordMap  from '@/lib/custmized-record-map'
+
 export async function resolveNotionPage(domain: string, rawPageId?: string) {
   let pageId: string
   let recordMap: ExtendedRecordMap
@@ -86,6 +88,7 @@ export async function resolveNotionPage(domain: string, rawPageId?: string) {
     recordMap = await getPage(pageId)
   }
 
+  await custmizedRecordMap(recordMap)
   const props = { site, recordMap, pageId }
   return { ...props, ...(await acl.pageAcl(props)) }
 }
