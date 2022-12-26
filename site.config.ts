@@ -10,7 +10,7 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'しーしゃーぱー日記',
-  domain: 'nextjs-notion-blog-kappa.vercel.app',
+  domain: 'nextjs-notion-blog-jade.vercel.app',
   author: 'Koya Haraguchi',
 
   // open graph metadata (optional)
