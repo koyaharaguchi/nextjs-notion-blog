@@ -14,7 +14,6 @@ import * as libConfig from '@/lib/config'
 import { mapImageUrl } from '@/lib/map-image-url'
 import { notion } from '@/lib/notion-api'
 import { NotionPageInfo } from '@/lib/types'
-import { getSocialImageUrl } from '@/lib/get-social-image-url'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== 'POST') {
